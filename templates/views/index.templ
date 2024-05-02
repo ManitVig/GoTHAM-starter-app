@@ -1,0 +1,26 @@
+package views
+
+import "github.com/manitvig/gotham-starter-app/templates/components"
+
+templ Index(count uint) {
+	<!DOCTYPE html>
+	<html lang="en">
+		<head>
+			<title>Gotham Quickstart</title>
+			<meta charset="UTF-8" />
+			<meta name="viewport" content="width=device-width, initial-scale=1" />
+			<script src="/bundle.js"></script>
+		</head>
+		<body class="bg-gray-300">
+			<div class="w-full h-[90vh] flex flex-col justify-center items-center space-y-2.5">
+				<h1 class="text-3xl font-bold pb-12">GoTHAM Quickstart</h1>
+				<div class="flex flex-row space-x-2 justify-center items-center">
+					<p>HTMX Counter:</p>
+					@components.Counter(count)
+					<p>Alpine Counter:</p>
+					@components.AlpineCounter()
+				</div>
+			</div>
+		</body>
+	</html>
+}

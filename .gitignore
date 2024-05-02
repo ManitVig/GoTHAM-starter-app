@@ -1,0 +1,7 @@
+go.mod
+node_modules/
+go.sum
+tmp/
+.git
+.env
+bun.lockb*

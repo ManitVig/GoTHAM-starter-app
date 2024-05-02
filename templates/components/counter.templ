@@ -1,0 +1,15 @@
+package components
+
+import "fmt"
+
+templ Counter(count uint) {
+	<button class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium tracking-wide text-red-500 transition-colors duration-100 rounded-md bg-red-50 hover:text-red-600 hover:bg-red-100" type="button" hx-post="/increment" hx-target="this" hx-swap="outerHTML">
+	   Count: {fmt.Sprintf("%v", count)}
+	</button>
+}
+
+templ AlpineCounter() {
+	<div class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium tracking-wide text-blue-500 transition-colors duration-100 rounded-md focus:ring-2 focus:ring-offset-2 focus:ring-blue-100 bg-blue-50 hover:text-blue-600 hover:bg-blue-100" x-data="{counter: 0}">
+		<button type="button" x-on:click="counter += 1">Count: <span x-text="counter"></span></button>
+	</div>
+}
